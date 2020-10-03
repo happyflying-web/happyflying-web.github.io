@@ -1,108 +1,166 @@
+
 <!DOCTYPE html>
 <html lang="zh-CN">
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-		<meta name="description" content="happyfly"/>
-		<meta name="theme-color" content="#7FFFD4"/>
-		<title>happyfly</title>
-	</head>
-	<style type="text/css">
-			* {
-				margin: 0;
-				padding: 0;
-				background-color: rgba(255, 255, 255, 0);
-			}
-		    html{
-		        width: 100%;
-		        height: 100%;
-		        background-color: white;
-		    }
-			body {
-				width: 100%;
-				height: 100%;
-				background-color: rgba(0, 255, 255 , 0.3);
-				background-image: url(images/水墨画.jpg);
-			} 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="OneWord">
+    <meta name="theme-color" content="#fff" />
+    <title>OneWord</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        background-color: rgba(255, 255, 255, 0);
+    }
 
-			#bgc {
-				position: absolute;
-				top: 0;
-				bottom: 0;
-				right: 0;
-				z-index: 1000;
-				width: 100%;
-				background-repeat: no-repeat;
-				background-size: cover;
-				background-color: rgba(135, 206 ,250,0.6);
-			}
-			#header {
-				position: absolute;
-				top: 0;
-				z-index: 999;
-				width: 100%;
-				color: rgba(255, 255, 255, 0.8);
-				background-color: rgba(255 ,106 ,106, 0.5);
-				/* Safari */
-				-webkit-transition: height 0.5s;
-			}
-			.set {
-				position: absolute;
-				width: 300px;
-				
-				border-radius: 2px 0 0 2px;
-				background-color: rgba(255, 255, 0, 0.5);
-				
-				z-index: 999;
-			}	
-			#setL {
-				bottom: 0;
-				left: 0;
-				height: 100%;
-			}
-			#setBottomRight{
-				bottom: 0;
-				right: 0;
-				height: 80%;
-			}
-			#shangxi{
-				font-size: 20px;
-			}
-			#biaoti{
-				font-size: 40px;
-				flood-color: #000000;
-			}
-			#content{
-				text-align: center;
-				font-size: 50px;
-			}
-	</style>
+    html{
+        width: 100%;
+        height: 100%;
+        background-color: white;
+    }
+    body {
+        width: 100%;
+        height: 100%;
+        background-color: rgb(255, 246 ,143, 0.3);
+		z-index: -1;
+    } 
+
+    #bgc {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        z-index: -2;
+        width: 50%;
+        background-repeat: no-repeat;
+        background-size: cover;
+		background-image: url(images/美女.jpg);
+    }
+
+    #header {
+        position: absolute;
+        top: 0;
+        z-index: 999;
+        width: 100%;
+        color: rgba(0,0,0,0.6);
+        font-weight: bolder;
+		font-size: 30px;
+        font-family: 'Segoe UI', Helvetica, Arial, sans-serif;
+        background-color: rgba(0, 170, 255, 0.3);
+
+    }
+
+    #setHeaderR {
+        top: 0;
+        right: 0;
+    }
+
+    #setHeaderL {
+        top: 0;
+        left: 0;
+
+    }
+
+    #clock {
+        position: absolute;
+        /* user-select: none; */
+        height: 100%;
+        line-height: 22px;
+        right: 25px;
+        z-index: 99;
+    }
+
+    #singer {
+        position: absolute;
+        height: 100%;
+        right: 240px;
+        z-index: 100;
+        background-color: rgba(0, 0, 0, 0);
+    }
+
+    #singer span {
+        height: 100%;
+        line-height: 20px;
+        margin: 1px 10px auto;
+        position: absolute;
+		right: 0;
+    }
+
+    #main {
+        height: 100%;
+        width: 100%;
+        white-space: normal;
+        text-align: center;
+        font-family: Arial, "Microsoft YaHei";
+        font-family: "Microsoft Yahei light", STHeiti, 'Droid Sans', Georgia, Times, 'Times New Roman', serif;
+    }
+
+    #text {
+        position: absolute;
+        top: 36%;
+        text-align: center;
+        font-size: xxx-large;
+        width: 100%;
+        overflow: auto;
+    }
+
+    #from {
+        position: absolute;
+        bottom: 20%;
+        text-align: center;
+        width: 100%;
+    }
+
+    .set {
+        position: absolute;
+        width: 4px;
+        height: 22px;
+        border-radius: 2px 0 0 2px;
+        background-color: rgba(255, 0, 127, 0.7);
+        
+        z-index: 1001;
+    }
+
+    .show {
+        height: 50%;
+        margin: auto 5%;
+        color: rgba(85, 255, 0, 0.5);
+        word-wrap: break-word;
+        word-break: keep-all;
+        position: relative;
+    }
+
+    .get {
+        width: 100%;
+        height: 50%;
+        position: relative;
+    }
+	#wenhouyu{
+		float: left;
+	}
 	
-	<body >
-		<div id="bgc"  ></div>
-		<div id="header" >
+</style>
 
-			<div id="biaoti"  align="center">				
-				<p ><h1 >走进诗词的世界</h1></p>
-			</div>
-			
-		</div>
-		
-		<div id="setL" class="set" >
-			<div id="content">
-			<p>好雨知时节，当春乃发生。</p>
-			<p>随风潜入夜，润物细无声。</p>
-			<p>野径云俱黑，江船火独明。</p>
-			<p>晓看红湿处，花重锦官城。</p>
-		</div>
-
-		</div>
-		<div id="setBottomRight" class="set">
-			<div id="shangxi">
-				<p>这一场雨就好似选好时候，正当春天万物生长之时就随即降临。细雨随着春风在夜里悄悄来到，它默默地滋润万物,没有一点声音。雨夜中,田野间的小路黑茫茫，只有江中渔船上灯火独自明亮着。要是早晨起来看看，锦官城里该是一片万紫千红吧！（看看带有雨水的红花之地，就会看到在锦官城里的花因沾上雨水而显得饱满沉重的样子。）</p>
-			</div>
-		</div>
-
-	</body>
-
+<body>
+    <div id="bgc" ></div>
+    <div id="header" >        
+        <div id="clock" >2020/10/4</div>
+        <div id="wenhouyu" >
+            <p>Welcome!</p>
+        </div>
+        <div id="singer">
+            <span>TaylorSwift</span>
+        </div>
+    </div>
+    <div id="setHeaderR" class="set" ></div>
+    <div id="setHeaderL" class="set" ></div>
+    <div id="main">
+        <div class="show">
+            <h1 id="text" >这里是较大的文字</h1>
+            <h2 id="from" >这里是较小的文字</h2>
+        </div>
+    </div>
+</body>
 </html>
