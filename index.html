@@ -1,53 +1,108 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-CN">
 	<head>
 		<meta charset="utf-8">
-		<title>哆啦A梦</title>
-		<style type="text/css">
-			*{
+		<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+		<meta name="description" content="happyfly"/>
+		<meta name="theme-color" content="#7FFFD4"/>
+		<title>happyfly</title>
+	</head>
+	<style type="text/css">
+			* {
 				margin: 0;
 				padding: 0;
+				background-color: rgba(255, 255, 255, 0);
 			}
-			#bgc{
-				background-color: bisque;
-			}
-			.background{
-				background-color: #7FFFD4;
-			}
-
-			#text {
-				position: absolute;
-				top: 50%;
-				text-align: center;
-				font-size: xxx-large;
+		    html{
+		        width: 100%;
+		        height: 100%;
+		        background-color: white;
+		    }
+			body {
 				width: 100%;
-				overflow: auto;
+				height: 100%;
+				background-color: rgba(0, 255, 255 , 0.3);
+				background-image: url(images/水墨画.jpg);
+			} 
+
+			#bgc {
+				position: absolute;
+				top: 0;
+				bottom: 0;
+				right: 0;
+				z-index: 1000;
+				width: 100%;
+				background-repeat: no-repeat;
+				background-size: cover;
+				background-color: rgba(135, 206 ,250,0.6);
+			}
+			#header {
+				position: absolute;
+				top: 0;
+				z-index: 999;
+				width: 100%;
+				color: rgba(255, 255, 255, 0.8);
+				background-color: rgba(255 ,106 ,106, 0.5);
+				/* Safari */
+				-webkit-transition: height 0.5s;
+			}
+			.set {
+				position: absolute;
+				width: 300px;
 				
+				border-radius: 2px 0 0 2px;
+				background-color: rgba(255, 255, 0, 0.5);
+				
+				z-index: 999;
+			}	
+			#setL {
+				bottom: 0;
+				left: 0;
+				height: 100%;
 			}
-			#lianjie{
-				text-decoration: none;
+			#setBottomRight{
+				bottom: 0;
+				right: 0;
+				height: 80%;
 			}
+			#shangxi{
+				font-size: 20px;
+			}
+			#biaoti{
+				font-size: 40px;
+				flood-color: #000000;
+			}
+			#content{
+				text-align: center;
+				font-size: 50px;
+			}
+	</style>
+	
+	<body >
+		<div id="bgc"  ></div>
+		<div id="header" >
 
-		</style>
-		<script type="text/javascript">
+			<div id="biaoti"  align="center">				
+				<p ><h1 >走进诗词的世界</h1></p>
+			</div>
 			
-		</script>
-	</head>
-	<body id="bgc">
-		<div id="">
-			<div class="background">
-				<h1 align="center">欢迎来到哆啦A梦的世界</h1>
-			</div>
-			<div align="center">
-				<img src="images/哆啦A梦1.jpg" width="400" height="280" >
-			</div>
-			<div   id="text">
-				<h2 ><a href="index_2.html" id="lianjie"><p>这是哆啦A梦的一张美图</p><p>点击我查看下一张美图哦</p></a></h2>
-			</div>
-
+		</div>
+		
+		<div id="setL" class="set" >
+			<div id="content">
+			<p>好雨知时节，当春乃发生。</p>
+			<p>随风潜入夜，润物细无声。</p>
+			<p>野径云俱黑，江船火独明。</p>
+			<p>晓看红湿处，花重锦官城。</p>
 		</div>
 
-
+		</div>
+		<div id="setBottomRight" class="set">
+			<div id="shangxi">
+				<p>这一场雨就好似选好时候，正当春天万物生长之时就随即降临。细雨随着春风在夜里悄悄来到，它默默地滋润万物,没有一点声音。雨夜中,田野间的小路黑茫茫，只有江中渔船上灯火独自明亮着。要是早晨起来看看，锦官城里该是一片万紫千红吧！（看看带有雨水的红花之地，就会看到在锦官城里的花因沾上雨水而显得饱满沉重的样子。）</p>
+			</div>
+		</div>
 
 	</body>
+
 </html>
